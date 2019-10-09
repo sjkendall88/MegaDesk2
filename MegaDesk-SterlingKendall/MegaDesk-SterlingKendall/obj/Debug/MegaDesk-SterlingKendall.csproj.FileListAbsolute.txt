@@ -1,0 +1,14 @@
+C:\Users\hotja\source\repos\sjkendall88\CIT365.Net\MegaDesk-SterlingKendall\MegaDesk-SterlingKendall\obj\Debug\MegaDesk-SterlingKendall.csprojAssemblyReference.cache
+C:\Users\hotja\source\repos\sjkendall88\CIT365.Net\MegaDesk-SterlingKendall\MegaDesk-SterlingKendall\obj\Debug\MegaDesk_SterlingKendall.AddQuote.resources
+C:\Users\hotja\source\repos\sjkendall88\CIT365.Net\MegaDesk-SterlingKendall\MegaDesk-SterlingKendall\obj\Debug\MegaDesk_SterlingKendall.DisplayQuotes.resources
+C:\Users\hotja\source\repos\sjkendall88\CIT365.Net\MegaDesk-SterlingKendall\MegaDesk-SterlingKendall\obj\Debug\MegaDesk_SterlingKendall.MainMenu.resources
+C:\Users\hotja\source\repos\sjkendall88\CIT365.Net\MegaDesk-SterlingKendall\MegaDesk-SterlingKendall\obj\Debug\MegaDesk_SterlingKendall.Properties.Resources.resources
+C:\Users\hotja\source\repos\sjkendall88\CIT365.Net\MegaDesk-SterlingKendall\MegaDesk-SterlingKendall\obj\Debug\MegaDesk_SterlingKendall.SearchQuotes.resources
+C:\Users\hotja\source\repos\sjkendall88\CIT365.Net\MegaDesk-SterlingKendall\MegaDesk-SterlingKendall\obj\Debug\MegaDesk_SterlingKendall.ViewAllQuotes.resources
+C:\Users\hotja\source\repos\sjkendall88\CIT365.Net\MegaDesk-SterlingKendall\MegaDesk-SterlingKendall\obj\Debug\MegaDesk-SterlingKendall.csproj.GenerateResource.cache
+C:\Users\hotja\source\repos\sjkendall88\CIT365.Net\MegaDesk-SterlingKendall\MegaDesk-SterlingKendall\obj\Debug\MegaDesk-SterlingKendall.csproj.CoreCompileInputs.cache
+C:\Users\hotja\source\repos\sjkendall88\CIT365.Net\MegaDesk-SterlingKendall\MegaDesk-SterlingKendall\bin\Debug\MegaDesk-SterlingKendall.exe.config
+C:\Users\hotja\source\repos\sjkendall88\CIT365.Net\MegaDesk-SterlingKendall\MegaDesk-SterlingKendall\bin\Debug\MegaDesk-SterlingKendall.exe
+C:\Users\hotja\source\repos\sjkendall88\CIT365.Net\MegaDesk-SterlingKendall\MegaDesk-SterlingKendall\bin\Debug\MegaDesk-SterlingKendall.pdb
+C:\Users\hotja\source\repos\sjkendall88\CIT365.Net\MegaDesk-SterlingKendall\MegaDesk-SterlingKendall\obj\Debug\MegaDesk-SterlingKendall.exe
+C:\Users\hotja\source\repos\sjkendall88\CIT365.Net\MegaDesk-SterlingKendall\MegaDesk-SterlingKendall\obj\Debug\MegaDesk-SterlingKendall.pdb
