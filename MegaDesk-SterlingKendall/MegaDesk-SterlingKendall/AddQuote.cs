@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MegaDesk_TeamEternal;
 
-namespace MegaDesk_SterlingKendall
+namespace MegaDesk2_TeamEternal
 {
     public partial class AddQuote : Form
     {

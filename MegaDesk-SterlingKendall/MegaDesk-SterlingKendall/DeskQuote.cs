@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using MegaDesk2_TeamEternal;
 
-namespace MegaDesk_SterlingKendall
+namespace MegaDesk_TeamEternal
 {
     class DeskQuote
     {

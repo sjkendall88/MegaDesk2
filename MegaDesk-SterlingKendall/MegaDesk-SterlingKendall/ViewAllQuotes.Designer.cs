@@ -1,4 +1,4 @@
-﻿namespace MegaDesk_SterlingKendall
+﻿namespace MegaDesk2_TeamEternal
 {
     partial class ViewAllQuotes
     {
