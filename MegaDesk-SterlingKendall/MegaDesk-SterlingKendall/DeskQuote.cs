@@ -155,4 +155,20 @@ namespace MegaDesk_TeamEternal
             return fee;
         }
     }
+    class MegaDeskQuotes //: DeskQuote
+    {
+        public string mdFirstName { get; set; }
+        public string mdLastName { get; set; }
+        public string mdAddress { get; set; }
+        public string mdCity { get; set; }
+        public string mdState { get; set; }
+        public DateTime mdOrderDate { get; set; }
+        public float mdWidth { get; set; }
+        public float mdDepth { get; set; }
+        public float mdNumOfDrawers { get; set; }
+        public string mdDeskType { get; set; }
+        public string mdRushDays { get; set; }
+        //public string mdTotalCost { get; set; }
+        //public string mdBreakCost { get; set; }
+    }
 }

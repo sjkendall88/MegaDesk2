@@ -145,7 +145,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(417, 450);
+            this.ClientSize = new System.Drawing.Size(417, 453);
             this.Controls.Add(this.StateLabel);
             this.Controls.Add(this.CityLabel);
             this.Controls.Add(this.AddressLabel);
