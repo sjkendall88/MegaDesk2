@@ -1,4 +1,4 @@
-﻿namespace MegaDesk_TeamEternal
+﻿namespace MegaDesk2_TeamEternal
 {
     class Desk
     {

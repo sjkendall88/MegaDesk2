@@ -1,7 +1,6 @@
 ﻿using System;
-using MegaDesk2_TeamEternal;
 
-namespace MegaDesk_TeamEternal
+namespace MegaDesk2_TeamEternal
 {
     class DeskQuote
     {
