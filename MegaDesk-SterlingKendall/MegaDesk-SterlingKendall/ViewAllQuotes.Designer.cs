@@ -28,7 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.BackButton = new System.Windows.Forms.Button();
+            this.gridQuotes = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.viewAllQuotesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.gridQuotes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewAllQuotesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // BackButton
@@ -41,14 +53,81 @@
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
+            // gridQuotes
+            // 
+            this.gridQuotes.AllowUserToDeleteRows = false;
+            this.gridQuotes.AllowUserToOrderColumns = true;
+            this.gridQuotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridQuotes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7});
+            this.gridQuotes.Location = new System.Drawing.Point(12, 12);
+            this.gridQuotes.Name = "gridQuotes";
+            this.gridQuotes.Size = new System.Drawing.Size(750, 383);
+            this.gridQuotes.TabIndex = 6;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Last name";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "First name";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Date of quote";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Material type";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Width";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Depth";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Number of drawers";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // viewAllQuotesBindingSource
+            // 
+            this.viewAllQuotesBindingSource.DataSource = typeof(MegaDesk2_TeamEternal.ViewAllQuotes);
+            // 
             // ViewAllQuotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(417, 450);
+            this.ClientSize = new System.Drawing.Size(811, 463);
+            this.Controls.Add(this.gridQuotes);
             this.Controls.Add(this.BackButton);
             this.Name = "ViewAllQuotes";
             this.Text = "ViewAllQuotes";
+            ((System.ComponentModel.ISupportInitialize)(this.gridQuotes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewAllQuotesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -56,5 +135,14 @@
         #endregion
 
         private System.Windows.Forms.Button BackButton;
+        private System.Windows.Forms.DataGridView gridQuotes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.BindingSource viewAllQuotesBindingSource;
     }
 }
