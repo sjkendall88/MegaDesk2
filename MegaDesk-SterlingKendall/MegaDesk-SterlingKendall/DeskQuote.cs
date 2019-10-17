@@ -87,11 +87,22 @@ namespace MegaDesk2_TeamEternal
             viewDisplayQuotes.FirstNameLabel.Text = fName;
             viewDisplayQuotes.LastNameLabel.Text = lName;
             viewDisplayQuotes.AddressLabel.Text = addrss;
-            viewDisplayQuotes.CityLabel.Text = cty;
+            viewDisplayQuotes.CityLabel.Text = cty + @", ";
             viewDisplayQuotes.StateLabel.Text = stte;
-            viewDisplayQuotes.DeskDiscLabel.Text = descOut;
-            viewDisplayQuotes.Desk1.Text = breakCost;
-            viewDisplayQuotes.Desk2.Text = "Total Cost: $" + deskCost;
+            //viewDisplayQuotes.DeskDiscLabel.Text = descOut + ":";
+            viewDisplayQuotes.MaterialLabel.Text = materials;
+            viewDisplayQuotes.WidthLabel.Text = width.ToString();
+            viewDisplayQuotes.DepthLabel.Text = depth.ToString();
+            viewDisplayQuotes.DrawersLabel.Text = drawers.ToString();
+            viewDisplayQuotes.DaysLabel.Text = rush.ToString();
+            //viewDisplayQuotes.Desk1.Text = breakCost;
+            //viewDisplayQuotes.Desk2.Text = "Total Cost:      $" + deskCost;
+            viewDisplayQuotes.BaseDeskPriceLabel.Text = "200";
+            viewDisplayQuotes.MaterialFeeLabel.Text = matFee.ToString();
+            viewDisplayQuotes.DrawerFeeLabel.Text = drawFee.ToString();
+            viewDisplayQuotes.OversizeFeeLabel.Text = topfee.ToString();
+            viewDisplayQuotes.RushFeeLabel.Text = feeRush.ToString();
+            viewDisplayQuotes.TotalCostLabel.Text = "$" + deskCost.ToString();
         }
 
         private static float RushFee(float squareInch, string rush)

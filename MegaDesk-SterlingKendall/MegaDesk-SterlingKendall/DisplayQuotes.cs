@@ -21,9 +21,12 @@ namespace MegaDesk2_TeamEternal
             }
         private void ToAddQuote_Click(object sender, EventArgs e)
         {
-            AddQuote viewAddQuote = (AddQuote) Tag;
-            viewAddQuote.Show();
-            Close();
+            //AddQuote viewAddQuote = (AddQuote) Tag;
+            //viewAddQuote.Show();
+            //Close();
+            MainMenu viewMainMenu = new MainMenu();
+            viewMainMenu.Show();
+            this.Close();
         }
 
         private void DisplayQuotes_Load(object sender, EventArgs e)
