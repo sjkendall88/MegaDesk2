@@ -28,71 +28,88 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.AddNewQuote = new System.Windows.Forms.Button();
             this.ViewQuote = new System.Windows.Forms.Button();
             this.SearchQuote = new System.Windows.Forms.Button();
             this.Exit = new System.Windows.Forms.Button();
             this.MegaDeskLogo = new System.Windows.Forms.PictureBox();
+            this.MainMenuLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.MegaDeskLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // AddNewQuote
             // 
             this.AddNewQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddNewQuote.Location = new System.Drawing.Point(12, 58);
+            this.AddNewQuote.Location = new System.Drawing.Point(69, 94);
             this.AddNewQuote.Name = "AddNewQuote";
             this.AddNewQuote.Size = new System.Drawing.Size(155, 56);
             this.AddNewQuote.TabIndex = 0;
-            this.AddNewQuote.Text = "Add New Quote";
+            this.AddNewQuote.Text = "&Add New Quote";
             this.AddNewQuote.UseVisualStyleBackColor = true;
             this.AddNewQuote.Click += new System.EventHandler(this.AddNewQuote_Click);
             // 
             // ViewQuote
             // 
             this.ViewQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewQuote.Location = new System.Drawing.Point(12, 143);
+            this.ViewQuote.Location = new System.Drawing.Point(69, 175);
             this.ViewQuote.Name = "ViewQuote";
             this.ViewQuote.Size = new System.Drawing.Size(155, 56);
             this.ViewQuote.TabIndex = 1;
-            this.ViewQuote.Text = "View Quote";
+            this.ViewQuote.Text = "&View Quotes";
             this.ViewQuote.UseVisualStyleBackColor = true;
             this.ViewQuote.Click += new System.EventHandler(this.ViewQuote_Click);
             // 
             // SearchQuote
             // 
             this.SearchQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchQuote.Location = new System.Drawing.Point(12, 233);
+            this.SearchQuote.Location = new System.Drawing.Point(69, 256);
             this.SearchQuote.Name = "SearchQuote";
             this.SearchQuote.Size = new System.Drawing.Size(155, 56);
             this.SearchQuote.TabIndex = 2;
-            this.SearchQuote.Text = "Search Quote";
+            this.SearchQuote.Text = "&Search Quote";
             this.SearchQuote.UseVisualStyleBackColor = true;
             this.SearchQuote.Click += new System.EventHandler(this.SearchQuote_Click);
             // 
             // Exit
             // 
             this.Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Exit.Location = new System.Drawing.Point(12, 322);
+            this.Exit.Location = new System.Drawing.Point(69, 337);
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(155, 56);
             this.Exit.TabIndex = 3;
-            this.Exit.Text = "Exit";
+            this.Exit.Text = "E&xit";
             this.Exit.UseVisualStyleBackColor = true;
             this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // MegaDeskLogo
             // 
-            this.MegaDeskLogo.Location = new System.Drawing.Point(186, 58);
+            this.MegaDeskLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.MegaDeskLogo.Image = ((System.Drawing.Image)(resources.GetObject("MegaDeskLogo.Image")));
+            this.MegaDeskLogo.Location = new System.Drawing.Point(296, 78);
             this.MegaDeskLogo.Name = "MegaDeskLogo";
-            this.MegaDeskLogo.Size = new System.Drawing.Size(219, 320);
+            this.MegaDeskLogo.Size = new System.Drawing.Size(441, 333);
             this.MegaDeskLogo.TabIndex = 4;
             this.MegaDeskLogo.TabStop = false;
+            // 
+            // MainMenuLabel
+            // 
+            this.MainMenuLabel.AutoSize = true;
+            this.MainMenuLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MainMenuLabel.ForeColor = System.Drawing.Color.White;
+            this.MainMenuLabel.Location = new System.Drawing.Point(342, 9);
+            this.MainMenuLabel.Name = "MainMenuLabel";
+            this.MainMenuLabel.Size = new System.Drawing.Size(155, 31);
+            this.MainMenuLabel.TabIndex = 5;
+            this.MainMenuLabel.Text = "Main Menu";
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(417, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(71)))), ((int)(((byte)(105)))));
+            this.ClientSize = new System.Drawing.Size(834, 511);
+            this.Controls.Add(this.MainMenuLabel);
             this.Controls.Add(this.MegaDeskLogo);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.SearchQuote);
@@ -102,6 +119,7 @@
             this.Text = "Main Menu";
             ((System.ComponentModel.ISupportInitialize)(this.MegaDeskLogo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -112,6 +130,7 @@
         private System.Windows.Forms.Button SearchQuote;
         private System.Windows.Forms.Button Exit;
         private System.Windows.Forms.PictureBox MegaDeskLogo;
+        private System.Windows.Forms.Label MainMenuLabel;
     }
 }
 
