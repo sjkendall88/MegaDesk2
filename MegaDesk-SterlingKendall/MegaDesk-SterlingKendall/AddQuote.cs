@@ -45,35 +45,35 @@ namespace MegaDesk2_TeamEternal
             testDesk.DeskType = DeskMaterials.Text;
             testDesk.RushDays = RushDelivery.Text;
 
-            MegaDeskQuotes megaDeskQuotes = new MegaDeskQuotes
-            {
-                mdFirstName = FirstName.Text,
-                mdLastName = LastName.Text,
-                mdAddress = address.Text,
-                mdCity = city.Text,
-                mdState = state.Text,
-                mdOrderDate = DateTime.Today,
-                mdWidth = Single.Parse(DeskWidth.Text),
-                mdDepth = Single.Parse(DeskDepth.Text),
-                mdNumOfDrawers = (float)NumOfDrawers.SelectedIndex,
-                mdDeskType = DeskMaterials.Text,
-                mdRushDays = RushDelivery.Text,
-                //mdTotalCost = DeskQuote.DeskCost();
-            };
+            //MegaDeskQuotes megaDeskQuotes = new MegaDeskQuotes
+            //{
+            //    mdFirstName = FirstName.Text,
+            //    mdLastName = LastName.Text,
+            //    mdAddress = address.Text,
+            //    mdCity = city.Text,
+            //    mdState = state.Text,
+            //    mdOrderDate = DateTime.Today,
+            //    mdWidth = Single.Parse(DeskWidth.Text),
+            //    mdDepth = Single.Parse(DeskDepth.Text),
+            //    mdNumOfDrawers = (float)NumOfDrawers.SelectedIndex,
+            //    mdDeskType = DeskMaterials.Text,
+            //    mdRushDays = RushDelivery.Text,
+            //    //mdTotalCost = DeskQuote.DeskCost();
+            //};
 
-            string result = JsonConvert.SerializeObject(megaDeskQuotes);
-            //textBox1.Text = result;
-            string cFile = @"quotes.json";
-            if (!File.Exists(cFile))
-            {
-                using (StreamWriter sw = File.CreateText(cFile))
-                {
-                }
-            }
-            using (StreamWriter sw = File.AppendText(cFile))
-            {
-                sw.WriteLine(result);
-            }
+            //string result = JsonConvert.SerializeObject(megaDeskQuotes);
+            ////textBox1.Text = result;
+            //string cFile = @"quotes.json";
+            //if (!File.Exists(cFile))
+            //{
+            //    using (StreamWriter sw = File.CreateText(cFile))
+            //    {
+            //    }
+            //}
+            //using (StreamWriter sw = File.AppendText(cFile))
+            //{
+            //    sw.WriteLine(result);
+            //}
 
             DisplayQuotes viewDisplayQuotes = new DisplayQuotes();
             viewDisplayQuotes.Tag = this;
@@ -120,6 +120,10 @@ namespace MegaDesk2_TeamEternal
         private void AddQuote_Load(object sender, EventArgs e)
         {
             // Bind Values to combobox
+            /* NumOfDrawers.DataSource = Enum.GetValues(typeof(NumOfDrawers)).Cast<NumOfDrawers>()
+             * The above declaration returns the value of the enum selection but doesn't print it to the
+             * combobox. Will test this on the SearchQuotes window.
+             */
             NumOfDrawers.DataSource = Enum.GetValues(typeof(NumOfDrawers));
             DeskMaterials.DataSource = Enum.GetValues(typeof(DeskType));
             RushDelivery.DataSource = Enum.GetValues(typeof(RushDays));

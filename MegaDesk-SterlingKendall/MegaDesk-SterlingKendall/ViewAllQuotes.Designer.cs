@@ -39,6 +39,7 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.viewAllQuotesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridQuotes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewAllQuotesBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -65,10 +66,11 @@
             this.Column4,
             this.Column5,
             this.Column6,
-            this.Column7});
+            this.Column7,
+            this.Column8});
             this.gridQuotes.Location = new System.Drawing.Point(12, 12);
             this.gridQuotes.Name = "gridQuotes";
-            this.gridQuotes.Size = new System.Drawing.Size(750, 383);
+            this.gridQuotes.Size = new System.Drawing.Size(841, 383);
             this.gridQuotes.TabIndex = 6;
             // 
             // Column1
@@ -117,6 +119,11 @@
             // 
             this.viewAllQuotesBindingSource.DataSource = typeof(MegaDesk2_TeamEternal.ViewAllQuotes);
             // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Total Cost";
+            this.Column8.Name = "Column8";
+            // 
             // ViewAllQuotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -144,5 +151,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.BindingSource viewAllQuotesBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
     }
 }

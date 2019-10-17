@@ -41,13 +41,15 @@ namespace MegaDesk2_TeamEternal
 
                     string[] row = new string[] 
                     {
-                        jsonList.mdOrderDate.ToString("dd MMM yyyy"),
                         jsonList.mdLastName,
                         jsonList.mdFirstName,
+                        jsonList.mdOrderDate.ToString("dd MMM yyyy"),
                         jsonList.mdDeskType,
                         jsonList.mdWidth.ToString(),
                         jsonList.mdDepth.ToString(),
-                        jsonList.mdNumOfDrawers.ToString() };
+                        jsonList.mdNumOfDrawers.ToString(),
+                        jsonList.mdTotalCost
+                    };
                     gridQuotes.Rows.Add(row);
 
                 }

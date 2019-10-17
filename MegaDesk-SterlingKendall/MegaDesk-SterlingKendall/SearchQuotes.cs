@@ -17,11 +17,23 @@ namespace MegaDesk2_TeamEternal
             InitializeComponent();
         }
 
+
+
         private void BackButton_Click(object sender, EventArgs e)
         {
             MainMenu vewMainMenu = (MainMenu)Tag;
             vewMainMenu.Show();
             Close();
+        }
+
+        private void SearchQuotes_Load(object sender, EventArgs e)
+        {
+            searchComboBox.DataSource = Enum.GetValues(typeof(DeskType));
+        }
+
+        private void SubButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
