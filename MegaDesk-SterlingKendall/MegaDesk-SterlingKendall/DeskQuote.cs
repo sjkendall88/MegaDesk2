@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace MegaDesk2_TeamEternal
 {
@@ -92,6 +94,37 @@ namespace MegaDesk2_TeamEternal
             viewDisplayQuotes.DeskDiscLabel.Text = descOut;
             viewDisplayQuotes.Desk1.Text = breakCost;
             viewDisplayQuotes.Desk2.Text = "Total Cost: $" + deskCost;
+
+            MegaDeskQuotes megaDeskQuotes = new MegaDeskQuotes();
+
+
+            megaDeskQuotes.mdFirstName = fName;
+            megaDeskQuotes.mdLastName = lName;
+            megaDeskQuotes.mdAddress = addrss;
+            megaDeskQuotes.mdCity = cty;
+            megaDeskQuotes.mdState = stte;
+            megaDeskQuotes.mdOrderDate = orderDate;
+            megaDeskQuotes.mdWidth = width;
+            megaDeskQuotes.mdDepth = depth;
+            megaDeskQuotes.mdNumOfDrawers = drawers;
+            megaDeskQuotes.mdDeskType = materials;
+            megaDeskQuotes.mdRushDays = rush;
+            megaDeskQuotes.mdTotalCost = "$" + deskCost.ToString();
+
+
+            string result = JsonConvert.SerializeObject(megaDeskQuotes);
+            //textBox1.Text = result;
+            string cFile = @"quotes.json";
+            if (!File.Exists(cFile))
+            {
+                using (StreamWriter sw = File.CreateText(cFile))
+                {
+                }
+            }
+            using (StreamWriter sw = File.AppendText(cFile))
+            {
+                sw.WriteLine(result);
+            }
         }
 
         private static float RushFee(float squareInch, string rush)
@@ -167,7 +200,7 @@ namespace MegaDesk2_TeamEternal
         public float mdNumOfDrawers { get; set; }
         public string mdDeskType { get; set; }
         public string mdRushDays { get; set; }
-        //public string mdTotalCost { get; set; }
+        public string mdTotalCost { get; set; }
         //public string mdBreakCost { get; set; }
     }
 }

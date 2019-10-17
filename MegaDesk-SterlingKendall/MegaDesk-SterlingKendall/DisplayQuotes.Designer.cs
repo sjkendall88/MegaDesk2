@@ -109,6 +109,7 @@
             this.Desk1.Size = new System.Drawing.Size(37, 20);
             this.Desk1.TabIndex = 27;
             this.Desk1.Text = "disc";
+            this.Desk1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // DeskDiscLabel
             // 
