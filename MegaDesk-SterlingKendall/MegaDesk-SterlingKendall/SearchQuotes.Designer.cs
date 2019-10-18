@@ -43,9 +43,9 @@
             this.dDrawers = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deskBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
-            this.searchResult = new System.Windows.Forms.TextBox();
+            this.searchResult = new System.Windows.Forms.Label();
+            this.deskBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.searchGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deskBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -151,10 +151,6 @@
             this.tCost.HeaderText = "Total Cost";
             this.tCost.Name = "tCost";
             // 
-            // deskBindingSource
-            // 
-            this.deskBindingSource.DataSource = typeof(MegaDesk2_TeamEternal.Desk);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -167,10 +163,17 @@
             // 
             // searchResult
             // 
-            this.searchResult.Location = new System.Drawing.Point(675, 34);
+            this.searchResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchResult.Location = new System.Drawing.Point(675, 32);
+            this.searchResult.MaximumSize = new System.Drawing.Size(120, 20);
+            this.searchResult.MinimumSize = new System.Drawing.Size(120, 20);
             this.searchResult.Name = "searchResult";
-            this.searchResult.Size = new System.Drawing.Size(100, 20);
+            this.searchResult.Size = new System.Drawing.Size(120, 20);
             this.searchResult.TabIndex = 11;
+            // 
+            // deskBindingSource
+            // 
+            this.deskBindingSource.DataSource = typeof(MegaDesk2_TeamEternal.Desk);
             // 
             // SearchQuotes
             // 
@@ -212,6 +215,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn rOrder;
         private System.Windows.Forms.DataGridViewTextBoxColumn tCost;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox searchResult;
+        private System.Windows.Forms.Label searchResult;
     }
 }
