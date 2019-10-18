@@ -32,52 +32,74 @@ namespace MegaDesk2_TeamEternal
         {
             // Fill combobox with desk material type for search parameter
             searchComboBox.DataSource = Enum.GetValues(typeof(DeskType));
+            searchGridView.Rows.Clear();
         }
 
         private void SubButton_Click(object sender, EventArgs e)
         {
             // Get Selected desktype
             string selectMaterial = searchComboBox.Text;
-            
-            // Create object for datagrid view May use megaDeskQuote object
 
-            // Create method to search JSON file with saved Quotes
-            StreamReader readFile = new StreamReader(@"quotes.json");
-            while (readFile.EndOfStream == false)
+            // Clear text from prior search
+            searchGridView.Rows.Clear();
+            searchResult.Text = "";
+
+            // Catch exception for file reader
+            try
             {
-                // loop through file looking for selected material type
-                string line = readFile.ReadLine();
-                MegaDeskQuotes outDeskQuotes = JsonConvert.DeserializeObject<MegaDeskQuotes>(line);
+                // Create method to search JSON file with saved Quotes
+                StreamReader readFile = new StreamReader(@"quotes.json");
 
-                if (outDeskQuotes.mdDeskType != selectMaterial)
+
+                while (readFile.EndOfStream == false)
                 {
-                    // If type not found continue
-                    continue;
-                }
-                else
-                {
-                    // If type found write line
-                    string[] row = new string[]
+                    // loop through file looking for selected material type
+                    string line = readFile.ReadLine();
+                    MegaDeskQuotes outDeskQuotes = JsonConvert.DeserializeObject<MegaDeskQuotes>(line);
+
+                    // Catch exception for material type not found
+                    try
                     {
-                        outDeskQuotes.mdFirstName,
-                        outDeskQuotes.mdLastName,
-                        outDeskQuotes.mdOrderDate.ToString(),
-                        outDeskQuotes.mdWidth.ToString(),
-                        outDeskQuotes.mdDepth.ToString(),
-                        outDeskQuotes.mdDeskType,
-                        outDeskQuotes.mdNumOfDrawers.ToString(),
-                        outDeskQuotes.mdRushDays,
-                        outDeskQuotes.mdTotalCost
-                    };
-                    searchGridView.Rows.Add(row);
+                        if (outDeskQuotes.mdDeskType != selectMaterial)
+                        {
+                            // If type not found continue
+                            continue;
+                        }
+                        else
+                        {
+                            // If type found write line
+                            string[] row = new string[]
+                            {
+                                outDeskQuotes.mdFirstName,
+                                outDeskQuotes.mdLastName,
+                                outDeskQuotes.mdOrderDate.ToString(),
+                                outDeskQuotes.mdWidth.ToString(),
+                                outDeskQuotes.mdDepth.ToString(),
+                                outDeskQuotes.mdDeskType,
+                                outDeskQuotes.mdNumOfDrawers.ToString(),
+                                outDeskQuotes.mdRushDays,
+                                outDeskQuotes.mdTotalCost
+                            };
+                            searchGridView.Rows.Add(row);
+                        }
+                    }
+                    catch (Exception exception)
+                    {
+                        Console.WriteLine(exception);
+                    }
                 }
+
+                // Close reader
+                readFile.Close();
+
+                // Check for rows added // if not added out failure // if successful out Results
+                int rowCount = searchGridView.Rows.Count;
+                searchResult.Text = rowCount > 1 ? "Successful" : "Unsuccessful";
             }
-
-            // Close reader
-            readFile.Close();
-
-            // Create method to fill view with Quotes
-
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+            }
         }
     }
 }

@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.BackButton = new System.Windows.Forms.Button();
-            this.deskBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.subButton = new System.Windows.Forms.Button();
             this.searchComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,8 +43,11 @@
             this.dDrawers = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.deskBindingSource)).BeginInit();
+            this.deskBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.searchResult = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.searchGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deskBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // BackButton
@@ -57,10 +59,6 @@
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
-            // 
-            // deskBindingSource
-            // 
-            this.deskBindingSource.DataSource = typeof(MegaDesk2_TeamEternal.Desk);
             // 
             // subButton
             // 
@@ -75,7 +73,7 @@
             // searchComboBox
             // 
             this.searchComboBox.FormattingEnabled = true;
-            this.searchComboBox.Location = new System.Drawing.Point(834, 31);
+            this.searchComboBox.Location = new System.Drawing.Point(310, 31);
             this.searchComboBox.Name = "searchComboBox";
             this.searchComboBox.Size = new System.Drawing.Size(121, 21);
             this.searchComboBox.TabIndex = 7;
@@ -84,7 +82,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(686, 32);
+            this.label1.Location = new System.Drawing.Point(162, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(142, 20);
             this.label1.TabIndex = 8;
@@ -153,11 +151,34 @@
             this.tCost.HeaderText = "Total Cost";
             this.tCost.Name = "tCost";
             // 
+            // deskBindingSource
+            // 
+            this.deskBindingSource.DataSource = typeof(MegaDesk2_TeamEternal.Desk);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(570, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 20);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Your search:";
+            // 
+            // searchResult
+            // 
+            this.searchResult.Location = new System.Drawing.Point(675, 34);
+            this.searchResult.Name = "searchResult";
+            this.searchResult.Size = new System.Drawing.Size(100, 20);
+            this.searchResult.TabIndex = 11;
+            // 
             // SearchQuotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(968, 458);
+            this.Controls.Add(this.searchResult);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.searchGridView);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.searchComboBox);
@@ -166,8 +187,8 @@
             this.Name = "SearchQuotes";
             this.Text = "SearchQuotes";
             this.Load += new System.EventHandler(this.SearchQuotes_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.deskBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deskBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,5 +211,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dDrawers;
         private System.Windows.Forms.DataGridViewTextBoxColumn rOrder;
         private System.Windows.Forms.DataGridViewTextBoxColumn tCost;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox searchResult;
     }
 }
