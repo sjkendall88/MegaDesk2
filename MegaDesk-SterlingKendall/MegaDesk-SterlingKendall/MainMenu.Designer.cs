@@ -41,7 +41,7 @@
             // AddNewQuote
             // 
             this.AddNewQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddNewQuote.Location = new System.Drawing.Point(69, 94);
+            this.AddNewQuote.Location = new System.Drawing.Point(172, 124);
             this.AddNewQuote.Name = "AddNewQuote";
             this.AddNewQuote.Size = new System.Drawing.Size(155, 56);
             this.AddNewQuote.TabIndex = 0;
@@ -52,7 +52,7 @@
             // ViewQuote
             // 
             this.ViewQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewQuote.Location = new System.Drawing.Point(69, 175);
+            this.ViewQuote.Location = new System.Drawing.Point(172, 205);
             this.ViewQuote.Name = "ViewQuote";
             this.ViewQuote.Size = new System.Drawing.Size(155, 56);
             this.ViewQuote.TabIndex = 1;
@@ -63,7 +63,7 @@
             // SearchQuote
             // 
             this.SearchQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchQuote.Location = new System.Drawing.Point(69, 256);
+            this.SearchQuote.Location = new System.Drawing.Point(172, 286);
             this.SearchQuote.Name = "SearchQuote";
             this.SearchQuote.Size = new System.Drawing.Size(155, 56);
             this.SearchQuote.TabIndex = 2;
@@ -74,7 +74,7 @@
             // Exit
             // 
             this.Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Exit.Location = new System.Drawing.Point(69, 337);
+            this.Exit.Location = new System.Drawing.Point(172, 367);
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(155, 56);
             this.Exit.TabIndex = 3;
@@ -86,7 +86,7 @@
             // 
             this.MegaDeskLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MegaDeskLogo.Image = ((System.Drawing.Image)(resources.GetObject("MegaDeskLogo.Image")));
-            this.MegaDeskLogo.Location = new System.Drawing.Point(296, 78);
+            this.MegaDeskLogo.Location = new System.Drawing.Point(445, 111);
             this.MegaDeskLogo.Name = "MegaDeskLogo";
             this.MegaDeskLogo.Size = new System.Drawing.Size(441, 333);
             this.MegaDeskLogo.TabIndex = 4;
@@ -97,7 +97,7 @@
             this.MainMenuLabel.AutoSize = true;
             this.MainMenuLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenuLabel.ForeColor = System.Drawing.Color.White;
-            this.MainMenuLabel.Location = new System.Drawing.Point(342, 9);
+            this.MainMenuLabel.Location = new System.Drawing.Point(411, 9);
             this.MainMenuLabel.Name = "MainMenuLabel";
             this.MainMenuLabel.Size = new System.Drawing.Size(155, 31);
             this.MainMenuLabel.TabIndex = 5;
@@ -108,7 +108,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(71)))), ((int)(((byte)(105)))));
-            this.ClientSize = new System.Drawing.Size(834, 511);
+            this.ClientSize = new System.Drawing.Size(984, 561);
             this.Controls.Add(this.MainMenuLabel);
             this.Controls.Add(this.MegaDeskLogo);
             this.Controls.Add(this.Exit);

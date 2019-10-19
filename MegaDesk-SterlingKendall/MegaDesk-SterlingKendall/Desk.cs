@@ -61,14 +61,5 @@
         PinePrice = 50,
         RosewoodPrice = 300,
         VeneerPrice = 125,
-        //Rush3By1Price = 60,
-        //Rush3By1To2Price = 70,
-        //Rush3Over2Price = 80,
-        //Rush5By1Price = 40,
-        //Rush5By1To2Price = 50,
-        //Rush5Over2Price = 60,
-        //Rush7By1Price = 30,
-        //Rush7By1To2Price = 35,
-        //Rush7Over2Price = 40
     }
 }

@@ -12,16 +12,15 @@ namespace MegaDesk2_TeamEternal
         public string address { get; set; }
         public string city { get; set; }
         public string state { get; set; }
+        public string phone { get; set; }
         public DateTime orderDate = DateTime.Today;
 
-        /*string fName, string lName, string addrss, string cty, string stte,
-        float width, float depth, float drawers, string materials, float rush*/
 
         public static void DeskCost(ref Desk testDesk, ref DeskQuote testQuote, ref DisplayQuotes viewDisplayQuotes)
         {
             // Variables
             float squareInch, feeRush = 0, matFee = 0, exDays = 0, drawFee, topfee = 0, deskCost, width, depth, drawers, baseDeskPrice=(float)MegaConst.BaseDeskPrice;
-            string fName, lName, addrss, cty, rush, materials, stte;
+            string fName, lName, addrss, cty, rush, materials, stte, phone;
             DateTime orderDate, expDate = default;
             int[,] rushFee = new int[3, 3];
 
@@ -31,6 +30,7 @@ namespace MegaDesk2_TeamEternal
             addrss = testQuote.address;
             cty = testQuote.city;
             stte = testQuote.state;
+            phone = testQuote.phone;
             orderDate = testQuote.orderDate;
             depth = testDesk.Depth;
             width = testDesk.Width;
@@ -39,8 +39,7 @@ namespace MegaDesk2_TeamEternal
             rush = testDesk.RushDays;
             
 
-            // Math to follow
-            // Figure square feet
+            // Area
             squareInch = depth * width;
             // Drawer fee math
             drawFee = (float)MegaConst.DrawerPrice * drawers;
@@ -111,8 +110,9 @@ namespace MegaDesk2_TeamEternal
             viewDisplayQuotes.FirstNameLabel.Text = fName;
             viewDisplayQuotes.LastNameLabel.Text = lName;
             viewDisplayQuotes.AddressLabel.Text = addrss;
-            viewDisplayQuotes.CityLabel.Text = cty;
+            viewDisplayQuotes.CityLabel.Text = cty + ",";
             viewDisplayQuotes.StateLabel.Text = stte;
+            viewDisplayQuotes.PhoneLabel.Text = phone;
             viewDisplayQuotes.MaterialLabel.Text = materials;
             viewDisplayQuotes.WidthLabel.Text = width.ToString();
             viewDisplayQuotes.DepthLabel.Text = depth.ToString();
@@ -135,6 +135,7 @@ namespace MegaDesk2_TeamEternal
             megaDeskQuotes.mdAddress = addrss;
             megaDeskQuotes.mdCity = cty;
             megaDeskQuotes.mdState = stte;
+            megaDeskQuotes.mdPhone = phone;
             megaDeskQuotes.mdOrderDate = orderDate;
             megaDeskQuotes.mdWidth = width;
             megaDeskQuotes.mdDepth = depth;
@@ -145,7 +146,6 @@ namespace MegaDesk2_TeamEternal
 
 
             string result = JsonConvert.SerializeObject(megaDeskQuotes);
-            //textBox1.Text = result;
             string cFile = @"quotes.json";
             if (!File.Exists(cFile))
             {
@@ -163,7 +163,6 @@ namespace MegaDesk2_TeamEternal
         {
             // Variables and array of fees
             float fee, exDays;
-            // int[,] rushFee = { { 60, 70, 80 }, { 40, 50, 60 }, { 30, 35, 40 } };
             int[] squareRange = { 1000, 2000 };
 
             // logic for fee
@@ -224,7 +223,6 @@ namespace MegaDesk2_TeamEternal
                     exDays = 7;
                 }
             }
-            // return fee
             return (fee, exDays);
         }
 
@@ -234,12 +232,9 @@ namespace MegaDesk2_TeamEternal
             try
             {
                 // Array variable to return with values
-                // int[,] rushFee = new int[3,3];
                 string filePath = @"rushOrderPrices.txt";
                 int[,] rushFee = new int[3, 3];
 
-                // Create method to search JSON file with saved Quotes
-                // StreamReader readFile = new StreamReader(filePath);
 
                 // read file
                 string[] readFile = File.ReadAllLines(filePath);
@@ -247,13 +242,8 @@ namespace MegaDesk2_TeamEternal
                 // for loop to populate multidimensional array
                 int i = 0, x = 0, y = 0;
 
-                // rushFee[x, y] = int.Parse(readFile[i]);
-
                 while (i < readFile.Length)
                 {
-                    // loop through third add in array
-
-
                     while (x < 3)
                     {
                         while (y < 3)
@@ -264,8 +254,6 @@ namespace MegaDesk2_TeamEternal
                             i++;
                             y++;
                         }
-                        // rushFee[x, y] = int.Parse(readFile[i]);
-                        // i++;
                         x++;
                         y = 0;
                     }
@@ -273,9 +261,6 @@ namespace MegaDesk2_TeamEternal
 
                 // variable to return array
                 return rushFee;
-
-                // Close reader
-                // readFile.;
                 
             }
             catch (Exception e)
@@ -299,8 +284,12 @@ namespace MegaDesk2_TeamEternal
             }
         }
     }
+
+
+
     class MegaDeskQuotes //: DeskQuote
     {
+        public string mdPhone { get; set; }
         public string mdFirstName { get; set; }
         public string mdLastName { get; set; }
         public string mdAddress { get; set; }
@@ -313,6 +302,5 @@ namespace MegaDesk2_TeamEternal
         public string mdDeskType { get; set; }
         public string mdRushDays { get; set; }
         public string mdTotalCost { get; set; }
-        //public string mdBreakCost { get; set; }
     }
 }

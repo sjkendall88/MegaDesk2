@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Newtonsoft.Json;
 
 namespace MegaDesk2_TeamEternal
 {
@@ -21,73 +14,49 @@ namespace MegaDesk2_TeamEternal
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            MainMenu vewMainMenu = (MainMenu)Tag;
+            MainMenu vewMainMenu = (MainMenu) Tag;
             vewMainMenu.Show();
             Close();
         }
 
         private void DisplayQuote_Click(object sender, EventArgs e)
         {
-            //DeskCost(firstName: FirstName.Text, lastName, string address, string city, string state, float width, float depth, int drawers, string materials, int rush);
             DeskQuote testQuote = new DeskQuote();
             testQuote.firstName = FirstName.Text;
             testQuote.lastName = LastName.Text;
             testQuote.address = address.Text;
             testQuote.city = city.Text;
             testQuote.state = state.Text;
+            testQuote.phone = phone.Text;
             testQuote.orderDate = DateTime.Today;
-            //testQuote.TotalCost = deskCost;
 
             Desk testDesk = new Desk();
+            //if depth or width empty, set as minimum values
+            if (DeskWidth.Text == "")
+            {
+                DeskWidth.Text = "24";
+            }
+
+            if (DeskDepth.Text == "")
+            {
+                DeskDepth.Text = "12";
+            }
             testDesk.Depth = Single.Parse(DeskDepth.Text);
             testDesk.Width = Single.Parse(DeskWidth.Text);
-            testDesk.NumOfDrawers = (float)NumOfDrawers.SelectedIndex;
+            testDesk.NumOfDrawers = (float) NumOfDrawers.SelectedIndex;
             testDesk.DeskType = DeskMaterials.Text;
             testDesk.RushDays = RushDelivery.Text;
-
-            //MegaDeskQuotes megaDeskQuotes = new MegaDeskQuotes
-            //{
-            //    mdFirstName = FirstName.Text,
-            //    mdLastName = LastName.Text,
-            //    mdAddress = address.Text,
-            //    mdCity = city.Text,
-            //    mdState = state.Text,
-            //    mdOrderDate = DateTime.Today,
-            //    mdWidth = Single.Parse(DeskWidth.Text),
-            //    mdDepth = Single.Parse(DeskDepth.Text),
-            //    mdNumOfDrawers = (float)NumOfDrawers.SelectedIndex,
-            //    mdDeskType = DeskMaterials.Text,
-            //    mdRushDays = RushDelivery.Text,
-            //    //mdTotalCost = DeskQuote.DeskCost();
-            //};
-
-            //string result = JsonConvert.SerializeObject(megaDeskQuotes);
-            ////textBox1.Text = result;
-            //string cFile = @"quotes.json";
-            //if (!File.Exists(cFile))
-            //{
-            //    using (StreamWriter sw = File.CreateText(cFile))
-            //    {
-            //    }
-            //}
-            //using (StreamWriter sw = File.AppendText(cFile))
-            //{
-            //    sw.WriteLine(result);
-            //}
-
+            
             DisplayQuotes viewDisplayQuotes = new DisplayQuotes();
             viewDisplayQuotes.Tag = this;
             viewDisplayQuotes.Show(this);
             Hide();
 
-             
+
 
             try
             {
                 DeskQuote.DeskCost(ref testDesk, ref testQuote, ref viewDisplayQuotes);
-                //DeskQuote.DeskCost(FirstName.Text, LastName.Text, address.Text, city.Text, state.Text,
-                //    float.Parse(DeskWidth.Text), float.Parse(DeskDepth.Text), float.Parse(NumOfDrawers.Text),
-                //    DeskMaterials.Text, float.Parse(RushDelivery.Text), ref viewDisplayQuotes);
             }
             catch (Exception exception)
             {
@@ -98,12 +67,12 @@ namespace MegaDesk2_TeamEternal
         private void DeskWidth_Validating(object sender, CancelEventArgs e)
         {
             float oWidth;
-            
+
             if (float.TryParse(DeskWidth.Text, out oWidth) && !(string.IsNullOrEmpty(DeskWidth.Text)))
             {
-                if ((int)MegaConst.MinWidth < oWidth && oWidth < (int)MegaConst.MaxWidth)
+                if ((int) MegaConst.MinWidth < oWidth && oWidth < (int) MegaConst.MaxWidth)
                 {
-                    DeskWidth.BackColor = Color.LawnGreen;
+                    DeskWidth.BackColor = Color.White;
                 }
                 else
                 {
@@ -126,18 +95,20 @@ namespace MegaDesk2_TeamEternal
             NumOfDrawers.DataSource = Enum.GetValues(typeof(NumOfDrawers));
             DeskMaterials.DataSource = Enum.GetValues(typeof(DeskType));
             RushDelivery.DataSource = Enum.GetValues(typeof(RushDays));
-            }
+        }
 
-        private void DeskDepth_KeyPress(object sender, KeyPressEventArgs e)
+
+        private void DeskDepth_Leave(object sender, EventArgs e)
         {
+            DisplayQuote.Enabled = true;
             float oDepth;
             //string.IsNullOrEmpty(DeskDepth.Text);  && char.IsDigit(DeskDepth.Text, 1)
 
             if (float.TryParse(DeskDepth.Text, out oDepth) && (char.IsDigit(DeskDepth.Text, 0)))
             {
-                if ((int)MegaConst.MinDepth < oDepth && oDepth < (int)MegaConst.MaxDepth)
+                if ((int) MegaConst.MinDepth < oDepth && oDepth < (int) MegaConst.MaxDepth)
                 {
-                    DeskDepth.BackColor = Color.LawnGreen;
+                    DeskDepth.BackColor = Color.White;
                 }
                 else
                 {
@@ -149,5 +120,70 @@ namespace MegaDesk2_TeamEternal
                 DeskDepth.BackColor = Color.Crimson;
             }
         }
+
+        private void DisplayQuote_MouseEnter(object sender, EventArgs e)
+        {
+            if (FirstName.Text == "" || LastName.Text == "" || address.Text == "" || city.Text == "" || state.Text == "" || DeskWidth.Text == "" || DeskDepth.Text == "" || NumOfDrawers.Text == "" || DeskMaterials.Text == "" || RushDelivery.Text == "" || phone.Text == "")
+            {
+                requiredFieldsLabel.BackColor = Color.DarkRed;
+                DisplayQuote.Enabled = false;
+            }
+            else
+            {
+                requiredFieldsLabel.Visible = false;
+                //DisplayQuote.Enabled = true;
+            }
+        }
+
+        private void DisplayQuote_MouseLeave(object sender, EventArgs e)
+        {
+            //requiredFieldsLabel.Visible = false;
+            //DisplayQuote.Enabled = true;
+        }
+
+        private void FirstName_Leave(object sender, EventArgs e)
+        {
+            DisplayQuote.Enabled = true;
+        }
+
+        private void LastName_Leave(object sender, EventArgs e)
+        {
+            DisplayQuote.Enabled = true;
+        }
+
+        private void Address_Leave(object sender, EventArgs e)
+        {
+            DisplayQuote.Enabled = true;
+        }
+
+        private void City_Leave(object sender, EventArgs e)
+        {
+            DisplayQuote.Enabled = true;
+        }
+
+        private void State_Leave(object sender, EventArgs e)
+        {
+            DisplayQuote.Enabled = true;
+        }
+
+        private void DeskWidth_Leave(object sender, EventArgs e)
+        {
+            DisplayQuote.Enabled = true;
+        }
+
+        private void NumOfDrawers_Leave(object sender, EventArgs e)
+        {
+            DisplayQuote.Enabled = true;
+        }
+
+        private void DeskMaterials_Leave(object sender, EventArgs e)
+        {
+            DisplayQuote.Enabled = true;
+        }
+
+        private void RushDelivery_Leave(object sender, EventArgs e)
+        {
+            DisplayQuote.Enabled = true;
+        }
     }
-}
+    };

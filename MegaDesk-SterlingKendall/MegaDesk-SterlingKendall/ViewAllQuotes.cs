@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 
@@ -25,19 +18,6 @@ namespace MegaDesk2_TeamEternal
                 while ((line = sr.ReadLine()) != null)
                 {
                     MegaDeskQuotes jsonList = JsonConvert.DeserializeObject<MegaDeskQuotes>(line);
-
-                    //textBox1.Text += (jsonList.mdOrderDate.ToString("dd MMM yyyy") + " " +jsonList.mdLastName + " " + jsonList.mdFirstName) + "\r\n";
-
-                    //listQuotes.Items.Add(new ListViewItem(new[]
-                    //{
-                    //    jsonList.mdOrderDate.ToString("dd MMM yyyy"),
-                    //    jsonList.mdLastName,
-                    //    jsonList.mdFirstName,
-                    //    jsonList.mdDeskType,
-                    //    jsonList.mdWidth.ToString(),
-                    //    jsonList.mdDepth.ToString(),
-                    //    jsonList.mdNumOfDrawers.ToString()
-                    //}));
 
                     string[] row = new string[] 
                     {

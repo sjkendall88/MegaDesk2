@@ -1,14 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Newtonsoft.Json;
 
 namespace MegaDesk2_TeamEternal
 {
@@ -21,9 +12,6 @@ namespace MegaDesk2_TeamEternal
             }
         private void ToAddQuote_Click(object sender, EventArgs e)
         {
-            //AddQuote viewAddQuote = (AddQuote) Tag;
-            //viewAddQuote.Show();
-            //Close();
             MainMenu viewMainMenu = new MainMenu();
             viewMainMenu.Show();
             this.Close();
