@@ -55,6 +55,7 @@
             this.currentDateLabel = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.requiredFieldsLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // DisplayQuote
@@ -319,12 +320,25 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker2.TabIndex = 76;
             // 
+            // requiredFieldsLabel
+            // 
+            this.requiredFieldsLabel.AutoSize = true;
+            this.requiredFieldsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.requiredFieldsLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.requiredFieldsLabel.Location = new System.Drawing.Point(366, 53);
+            this.requiredFieldsLabel.Name = "requiredFieldsLabel";
+            this.requiredFieldsLabel.Size = new System.Drawing.Size(258, 26);
+            this.requiredFieldsLabel.TabIndex = 77;
+            this.requiredFieldsLabel.Text = "**All fields are required.**";
+            this.requiredFieldsLabel.Visible = false;
+            // 
             // AddQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(71)))), ((int)(((byte)(105)))));
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.requiredFieldsLabel);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.finishDateLabel);
@@ -389,5 +403,6 @@
         private System.Windows.Forms.Label currentDateLabel;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Label requiredFieldsLabel;
     }
 }

@@ -14,8 +14,6 @@ namespace MegaDesk2_TeamEternal
         public string state { get; set; }
         public DateTime orderDate = DateTime.Today;
 
-        /*string fName, string lName, string addrss, string cty, string stte,
-        float width, float depth, float drawers, string materials, float rush*/
 
         public static void DeskCost(ref Desk testDesk, ref DeskQuote testQuote, ref DisplayQuotes viewDisplayQuotes)
         {
@@ -39,8 +37,7 @@ namespace MegaDesk2_TeamEternal
             rush = testDesk.RushDays;
             
 
-            // Math to follow
-            // Figure square feet
+            // Area
             squareInch = depth * width;
             // Drawer fee math
             drawFee = (float)MegaConst.DrawerPrice * drawers;
@@ -145,7 +142,6 @@ namespace MegaDesk2_TeamEternal
 
 
             string result = JsonConvert.SerializeObject(megaDeskQuotes);
-            //textBox1.Text = result;
             string cFile = @"quotes.json";
             if (!File.Exists(cFile))
             {
@@ -163,7 +159,6 @@ namespace MegaDesk2_TeamEternal
         {
             // Variables and array of fees
             float fee, exDays;
-            // int[,] rushFee = { { 60, 70, 80 }, { 40, 50, 60 }, { 30, 35, 40 } };
             int[] squareRange = { 1000, 2000 };
 
             // logic for fee
@@ -224,7 +219,6 @@ namespace MegaDesk2_TeamEternal
                     exDays = 7;
                 }
             }
-            // return fee
             return (fee, exDays);
         }
 
@@ -234,12 +228,9 @@ namespace MegaDesk2_TeamEternal
             try
             {
                 // Array variable to return with values
-                // int[,] rushFee = new int[3,3];
                 string filePath = @"rushOrderPrices.txt";
                 int[,] rushFee = new int[3, 3];
 
-                // Create method to search JSON file with saved Quotes
-                // StreamReader readFile = new StreamReader(filePath);
 
                 // read file
                 string[] readFile = File.ReadAllLines(filePath);
@@ -247,13 +238,8 @@ namespace MegaDesk2_TeamEternal
                 // for loop to populate multidimensional array
                 int i = 0, x = 0, y = 0;
 
-                // rushFee[x, y] = int.Parse(readFile[i]);
-
                 while (i < readFile.Length)
                 {
-                    // loop through third add in array
-
-
                     while (x < 3)
                     {
                         while (y < 3)
@@ -264,8 +250,6 @@ namespace MegaDesk2_TeamEternal
                             i++;
                             y++;
                         }
-                        // rushFee[x, y] = int.Parse(readFile[i]);
-                        // i++;
                         x++;
                         y = 0;
                     }
@@ -273,9 +257,6 @@ namespace MegaDesk2_TeamEternal
 
                 // variable to return array
                 return rushFee;
-
-                // Close reader
-                // readFile.;
                 
             }
             catch (Exception e)
@@ -316,6 +297,5 @@ namespace MegaDesk2_TeamEternal
         public string mdDeskType { get; set; }
         public string mdRushDays { get; set; }
         public string mdTotalCost { get; set; }
-        //public string mdBreakCost { get; set; }
     }
 }

@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 
@@ -92,7 +85,7 @@ namespace MegaDesk2_TeamEternal
                 // Close reader
                 readFile.Close();
 
-                // Check for rows added // if not added out failure // if successful out Results
+                // Check for rows added, if none added, msg
                 int rowCount = searchGridView.Rows.Count;
                 searchResult.Text = rowCount > 1 ? "" : "No records found  for " + selectMaterial + ".";
             }
