@@ -43,7 +43,6 @@
             this.dDrawers = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
             this.searchResult = new System.Windows.Forms.Label();
             this.deskBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.NewQuoteLabel = new System.Windows.Forms.Label();
@@ -54,7 +53,7 @@
             // BackButton
             // 
             this.BackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackButton.Location = new System.Drawing.Point(640, 493);
+            this.BackButton.Location = new System.Drawing.Point(817, 493);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(155, 56);
             this.BackButton.TabIndex = 3;
@@ -65,9 +64,9 @@
             // subButton
             // 
             this.subButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subButton.Location = new System.Drawing.Point(817, 493);
+            this.subButton.Location = new System.Drawing.Point(327, 76);
             this.subButton.Name = "subButton";
-            this.subButton.Size = new System.Drawing.Size(155, 56);
+            this.subButton.Size = new System.Drawing.Size(88, 31);
             this.subButton.TabIndex = 6;
             this.subButton.Text = "Search";
             this.subButton.UseVisualStyleBackColor = true;
@@ -76,7 +75,7 @@
             // searchComboBox
             // 
             this.searchComboBox.FormattingEnabled = true;
-            this.searchComboBox.Location = new System.Drawing.Point(310, 85);
+            this.searchComboBox.Location = new System.Drawing.Point(200, 85);
             this.searchComboBox.Name = "searchComboBox";
             this.searchComboBox.Size = new System.Drawing.Size(121, 21);
             this.searchComboBox.TabIndex = 7;
@@ -86,7 +85,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(162, 86);
+            this.label1.Location = new System.Drawing.Point(52, 86);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(142, 20);
             this.label1.TabIndex = 8;
@@ -157,26 +156,14 @@
             this.tCost.HeaderText = "Total Cost";
             this.tCost.Name = "tCost";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(570, 86);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 20);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Your search:";
-            // 
             // searchResult
             // 
+            this.searchResult.AutoSize = true;
             this.searchResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchResult.ForeColor = System.Drawing.SystemColors.Control;
-            this.searchResult.Location = new System.Drawing.Point(675, 86);
-            this.searchResult.MaximumSize = new System.Drawing.Size(120, 20);
-            this.searchResult.MinimumSize = new System.Drawing.Size(120, 20);
+            this.searchResult.Location = new System.Drawing.Point(623, 86);
             this.searchResult.Name = "searchResult";
-            this.searchResult.Size = new System.Drawing.Size(120, 20);
+            this.searchResult.Size = new System.Drawing.Size(0, 20);
             this.searchResult.TabIndex = 11;
             // 
             // NewQuoteLabel
@@ -198,7 +185,6 @@
             this.ClientSize = new System.Drawing.Size(984, 561);
             this.Controls.Add(this.NewQuoteLabel);
             this.Controls.Add(this.searchResult);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.searchGridView);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.searchComboBox);
@@ -231,7 +217,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dDrawers;
         private System.Windows.Forms.DataGridViewTextBoxColumn rOrder;
         private System.Windows.Forms.DataGridViewTextBoxColumn tCost;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label searchResult;
         private System.Windows.Forms.Label NewQuoteLabel;
     }

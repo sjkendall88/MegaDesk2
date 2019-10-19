@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Newtonsoft.Json;
 
 namespace MegaDesk2_TeamEternal
 {
@@ -28,7 +21,6 @@ namespace MegaDesk2_TeamEternal
 
         private void DisplayQuote_Click(object sender, EventArgs e)
         {
-            //DeskCost(firstName: FirstName.Text, lastName, string address, string city, string state, float width, float depth, int drawers, string materials, int rush);
             DeskQuote testQuote = new DeskQuote();
             testQuote.firstName = FirstName.Text;
             testQuote.lastName = LastName.Text;
@@ -36,7 +28,6 @@ namespace MegaDesk2_TeamEternal
             testQuote.city = city.Text;
             testQuote.state = state.Text;
             testQuote.orderDate = DateTime.Today;
-            //testQuote.TotalCost = deskCost;
 
             Desk testDesk = new Desk();
             testDesk.Depth = Single.Parse(DeskDepth.Text);
@@ -45,35 +36,6 @@ namespace MegaDesk2_TeamEternal
             testDesk.DeskType = DeskMaterials.Text;
             testDesk.RushDays = RushDelivery.Text;
 
-            //MegaDeskQuotes megaDeskQuotes = new MegaDeskQuotes
-            //{
-            //    mdFirstName = FirstName.Text,
-            //    mdLastName = LastName.Text,
-            //    mdAddress = address.Text,
-            //    mdCity = city.Text,
-            //    mdState = state.Text,
-            //    mdOrderDate = DateTime.Today,
-            //    mdWidth = Single.Parse(DeskWidth.Text),
-            //    mdDepth = Single.Parse(DeskDepth.Text),
-            //    mdNumOfDrawers = (float)NumOfDrawers.SelectedIndex,
-            //    mdDeskType = DeskMaterials.Text,
-            //    mdRushDays = RushDelivery.Text,
-            //    //mdTotalCost = DeskQuote.DeskCost();
-            //};
-
-            //string result = JsonConvert.SerializeObject(megaDeskQuotes);
-            ////textBox1.Text = result;
-            //string cFile = @"quotes.json";
-            //if (!File.Exists(cFile))
-            //{
-            //    using (StreamWriter sw = File.CreateText(cFile))
-            //    {
-            //    }
-            //}
-            //using (StreamWriter sw = File.AppendText(cFile))
-            //{
-            //    sw.WriteLine(result);
-            //}
 
             DisplayQuotes viewDisplayQuotes = new DisplayQuotes();
             viewDisplayQuotes.Tag = this;
@@ -85,9 +47,6 @@ namespace MegaDesk2_TeamEternal
             try
             {
                 DeskQuote.DeskCost(ref testDesk, ref testQuote, ref viewDisplayQuotes);
-                //DeskQuote.DeskCost(FirstName.Text, LastName.Text, address.Text, city.Text, state.Text,
-                //    float.Parse(DeskWidth.Text), float.Parse(DeskDepth.Text), float.Parse(NumOfDrawers.Text),
-                //    DeskMaterials.Text, float.Parse(RushDelivery.Text), ref viewDisplayQuotes);
             }
             catch (Exception exception)
             {
@@ -128,7 +87,8 @@ namespace MegaDesk2_TeamEternal
             RushDelivery.DataSource = Enum.GetValues(typeof(RushDays));
             }
 
-        private void DeskDepth_KeyPress(object sender, KeyPressEventArgs e)
+
+        private void DeskDepth_Leave(object sender, EventArgs e)
         {
             float oDepth;
             //string.IsNullOrEmpty(DeskDepth.Text);  && char.IsDigit(DeskDepth.Text, 1)

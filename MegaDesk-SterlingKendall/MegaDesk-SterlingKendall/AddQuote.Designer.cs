@@ -60,7 +60,7 @@
             // DisplayQuote
             // 
             this.DisplayQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DisplayQuote.Location = new System.Drawing.Point(817, 493);
+            this.DisplayQuote.Location = new System.Drawing.Point(391, 493);
             this.DisplayQuote.Name = "DisplayQuote";
             this.DisplayQuote.Size = new System.Drawing.Size(155, 56);
             this.DisplayQuote.TabIndex = 12;
@@ -71,7 +71,7 @@
             // BackButton
             // 
             this.BackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackButton.Location = new System.Drawing.Point(639, 493);
+            this.BackButton.Location = new System.Drawing.Point(817, 493);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(155, 56);
             this.BackButton.TabIndex = 11;
@@ -178,7 +178,7 @@
             this.DeskDepth.Name = "DeskDepth";
             this.DeskDepth.Size = new System.Drawing.Size(200, 26);
             this.DeskDepth.TabIndex = 7;
-            this.DeskDepth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DeskDepth_KeyPress);
+            this.DeskDepth.Leave += new System.EventHandler(this.DeskDepth_Leave);
             // 
             // NumOfDrawers
             // 
@@ -288,7 +288,7 @@
             this.finishDateLabel.AutoSize = true;
             this.finishDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.finishDateLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.finishDateLabel.Location = new System.Drawing.Point(693, 302);
+            this.finishDateLabel.Location = new System.Drawing.Point(693, 175);
             this.finishDateLabel.Name = "finishDateLabel";
             this.finishDateLabel.Size = new System.Drawing.Size(208, 26);
             this.finishDateLabel.TabIndex = 74;
@@ -314,7 +314,7 @@
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(698, 330);
+            this.dateTimePicker2.Location = new System.Drawing.Point(698, 203);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker2.TabIndex = 76;
