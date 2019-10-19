@@ -79,7 +79,7 @@
             this.BackButton.Location = new System.Drawing.Point(817, 493);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(155, 56);
-            this.BackButton.TabIndex = 11;
+            this.BackButton.TabIndex = 13;
             this.BackButton.Text = "&Main Menu";
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
@@ -175,7 +175,7 @@
             this.DeskWidth.Location = new System.Drawing.Point(346, 319);
             this.DeskWidth.Name = "DeskWidth";
             this.DeskWidth.Size = new System.Drawing.Size(200, 26);
-            this.DeskWidth.TabIndex = 6;
+            this.DeskWidth.TabIndex = 7;
             this.DeskWidth.Leave += new System.EventHandler(this.DeskWidth_Leave);
             this.DeskWidth.Validating += new System.ComponentModel.CancelEventHandler(this.DeskWidth_Validating);
             // 
@@ -185,7 +185,7 @@
             this.DeskDepth.Location = new System.Drawing.Point(346, 355);
             this.DeskDepth.Name = "DeskDepth";
             this.DeskDepth.Size = new System.Drawing.Size(200, 26);
-            this.DeskDepth.TabIndex = 7;
+            this.DeskDepth.TabIndex = 8;
             this.DeskDepth.Leave += new System.EventHandler(this.DeskDepth_Leave);
             // 
             // NumOfDrawers
@@ -194,7 +194,7 @@
             this.NumOfDrawers.Location = new System.Drawing.Point(346, 391);
             this.NumOfDrawers.Name = "NumOfDrawers";
             this.NumOfDrawers.Size = new System.Drawing.Size(200, 21);
-            this.NumOfDrawers.TabIndex = 8;
+            this.NumOfDrawers.TabIndex = 9;
             this.NumOfDrawers.Leave += new System.EventHandler(this.NumOfDrawers_Leave);
             // 
             // DeskMaterials
@@ -203,7 +203,7 @@
             this.DeskMaterials.Location = new System.Drawing.Point(346, 422);
             this.DeskMaterials.Name = "DeskMaterials";
             this.DeskMaterials.Size = new System.Drawing.Size(200, 21);
-            this.DeskMaterials.TabIndex = 9;
+            this.DeskMaterials.TabIndex = 10;
             this.DeskMaterials.Leave += new System.EventHandler(this.DeskMaterials_Leave);
             // 
             // RushDelivery
@@ -212,7 +212,7 @@
             this.RushDelivery.Location = new System.Drawing.Point(346, 453);
             this.RushDelivery.Name = "RushDelivery";
             this.RushDelivery.Size = new System.Drawing.Size(200, 21);
-            this.RushDelivery.TabIndex = 10;
+            this.RushDelivery.TabIndex = 11;
             this.RushDelivery.Leave += new System.EventHandler(this.RushDelivery_Leave);
             // 
             // RushLabel
@@ -364,7 +364,7 @@
             this.phone.Multiline = true;
             this.phone.Name = "phone";
             this.phone.Size = new System.Drawing.Size(200, 26);
-            this.phone.TabIndex = 81;
+            this.phone.TabIndex = 6;
             // 
             // AddQuote
             // 

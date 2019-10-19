@@ -87,7 +87,7 @@ namespace MegaDesk2_TeamEternal
 
                 // Check for rows added, if none added, msg
                 int rowCount = searchGridView.Rows.Count;
-                searchResult.Text = rowCount > 1 ? "" : "No records found  for " + selectMaterial + ".";
+                searchResult.Text = rowCount > 1 ? "" :  selectMaterial + " orders do not exist.";
             }
             catch (Exception exception)
             {
