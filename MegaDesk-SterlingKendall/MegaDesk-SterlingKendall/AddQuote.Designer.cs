@@ -51,11 +51,11 @@
             this.state = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.NewQuoteLabel = new System.Windows.Forms.Label();
-            this.finishDateLabel = new System.Windows.Forms.Label();
             this.currentDateLabel = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.requiredFieldsLabel = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // DisplayQuote
@@ -68,6 +68,8 @@
             this.DisplayQuote.Text = "&Finish Quote";
             this.DisplayQuote.UseVisualStyleBackColor = true;
             this.DisplayQuote.Click += new System.EventHandler(this.DisplayQuote_Click);
+            this.DisplayQuote.MouseEnter += new System.EventHandler(this.DisplayQuote_MouseEnter);
+            this.DisplayQuote.MouseLeave += new System.EventHandler(this.DisplayQuote_MouseLeave);
             // 
             // BackButton
             // 
@@ -153,6 +155,7 @@
             this.FirstName.Name = "FirstName";
             this.FirstName.Size = new System.Drawing.Size(200, 26);
             this.FirstName.TabIndex = 1;
+            this.FirstName.Leave += new System.EventHandler(this.FirstName_Leave);
             // 
             // LastName
             // 
@@ -161,6 +164,7 @@
             this.LastName.Name = "LastName";
             this.LastName.Size = new System.Drawing.Size(200, 26);
             this.LastName.TabIndex = 2;
+            this.LastName.Leave += new System.EventHandler(this.LastName_Leave);
             // 
             // DeskWidth
             // 
@@ -170,6 +174,7 @@
             this.DeskWidth.Name = "DeskWidth";
             this.DeskWidth.Size = new System.Drawing.Size(200, 26);
             this.DeskWidth.TabIndex = 6;
+            this.DeskWidth.Leave += new System.EventHandler(this.DeskWidth_Leave);
             this.DeskWidth.Validating += new System.ComponentModel.CancelEventHandler(this.DeskWidth_Validating);
             // 
             // DeskDepth
@@ -188,6 +193,7 @@
             this.NumOfDrawers.Name = "NumOfDrawers";
             this.NumOfDrawers.Size = new System.Drawing.Size(200, 21);
             this.NumOfDrawers.TabIndex = 8;
+            this.NumOfDrawers.Leave += new System.EventHandler(this.NumOfDrawers_Leave);
             // 
             // DeskMaterials
             // 
@@ -196,6 +202,7 @@
             this.DeskMaterials.Name = "DeskMaterials";
             this.DeskMaterials.Size = new System.Drawing.Size(200, 21);
             this.DeskMaterials.TabIndex = 9;
+            this.DeskMaterials.Leave += new System.EventHandler(this.DeskMaterials_Leave);
             // 
             // RushDelivery
             // 
@@ -204,6 +211,7 @@
             this.RushDelivery.Name = "RushDelivery";
             this.RushDelivery.Size = new System.Drawing.Size(200, 21);
             this.RushDelivery.TabIndex = 10;
+            this.RushDelivery.Leave += new System.EventHandler(this.RushDelivery_Leave);
             // 
             // RushLabel
             // 
@@ -223,6 +231,7 @@
             this.address.Name = "address";
             this.address.Size = new System.Drawing.Size(200, 26);
             this.address.TabIndex = 3;
+            this.address.Leave += new System.EventHandler(this.Address_Leave);
             // 
             // label1
             // 
@@ -242,6 +251,7 @@
             this.city.Name = "city";
             this.city.Size = new System.Drawing.Size(200, 26);
             this.city.TabIndex = 4;
+            this.city.Leave += new System.EventHandler(this.City_Leave);
             // 
             // label2
             // 
@@ -261,6 +271,7 @@
             this.state.Name = "state";
             this.state.Size = new System.Drawing.Size(200, 26);
             this.state.TabIndex = 5;
+            this.state.Leave += new System.EventHandler(this.State_Leave);
             // 
             // label3
             // 
@@ -284,17 +295,6 @@
             this.NewQuoteLabel.TabIndex = 72;
             this.NewQuoteLabel.Text = "Add a New Quote";
             // 
-            // finishDateLabel
-            // 
-            this.finishDateLabel.AutoSize = true;
-            this.finishDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.finishDateLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.finishDateLabel.Location = new System.Drawing.Point(693, 175);
-            this.finishDateLabel.Name = "finishDateLabel";
-            this.finishDateLabel.Size = new System.Drawing.Size(208, 26);
-            this.finishDateLabel.TabIndex = 74;
-            this.finishDateLabel.Text = "Expected finish date";
-            // 
             // currentDateLabel
             // 
             this.currentDateLabel.AutoSize = true;
@@ -313,13 +313,6 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 75;
             // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(698, 203);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 76;
-            // 
             // requiredFieldsLabel
             // 
             this.requiredFieldsLabel.AutoSize = true;
@@ -330,7 +323,26 @@
             this.requiredFieldsLabel.Size = new System.Drawing.Size(258, 26);
             this.requiredFieldsLabel.TabIndex = 77;
             this.requiredFieldsLabel.Text = "**All fields are required.**";
-            this.requiredFieldsLabel.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.Control;
+            this.label4.Location = new System.Drawing.Point(268, 295);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(50, 13);
+            this.label4.TabIndex = 78;
+            this.label4.Text = "24\" - 96\"";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.Control;
+            this.label5.Location = new System.Drawing.Point(268, 328);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(50, 13);
+            this.label5.TabIndex = 79;
+            this.label5.Text = "12\" - 48\"";
             // 
             // AddQuote
             // 
@@ -338,10 +350,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(71)))), ((int)(((byte)(105)))));
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.requiredFieldsLabel);
-            this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.finishDateLabel);
             this.Controls.Add(this.currentDateLabel);
             this.Controls.Add(this.NewQuoteLabel);
             this.Controls.Add(this.state);
@@ -399,10 +411,10 @@
         private System.Windows.Forms.TextBox state;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label NewQuoteLabel;
-        private System.Windows.Forms.Label finishDateLabel;
         private System.Windows.Forms.Label currentDateLabel;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label requiredFieldsLabel;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

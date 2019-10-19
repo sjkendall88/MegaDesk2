@@ -375,58 +375,58 @@
             // 
             // MaterialLabel
             // 
-            this.MaterialLabel.AutoSize = true;
             this.MaterialLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaterialLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.MaterialLabel.Location = new System.Drawing.Point(634, 58);
+            this.MaterialLabel.Location = new System.Drawing.Point(645, 58);
             this.MaterialLabel.Name = "MaterialLabel";
-            this.MaterialLabel.Size = new System.Drawing.Size(65, 20);
+            this.MaterialLabel.Size = new System.Drawing.Size(100, 20);
             this.MaterialLabel.TabIndex = 66;
             this.MaterialLabel.Text = "material";
+            this.MaterialLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // WidthLabel
             // 
-            this.WidthLabel.AutoSize = true;
             this.WidthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WidthLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.WidthLabel.Location = new System.Drawing.Point(634, 86);
+            this.WidthLabel.Location = new System.Drawing.Point(645, 88);
             this.WidthLabel.Name = "WidthLabel";
-            this.WidthLabel.Size = new System.Drawing.Size(46, 20);
+            this.WidthLabel.Size = new System.Drawing.Size(100, 20);
             this.WidthLabel.TabIndex = 67;
             this.WidthLabel.Text = "width";
+            this.WidthLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // DrawersLabel
             // 
-            this.DrawersLabel.AutoSize = true;
             this.DrawersLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DrawersLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.DrawersLabel.Location = new System.Drawing.Point(634, 145);
+            this.DrawersLabel.Location = new System.Drawing.Point(645, 147);
             this.DrawersLabel.Name = "DrawersLabel";
-            this.DrawersLabel.Size = new System.Drawing.Size(65, 20);
+            this.DrawersLabel.Size = new System.Drawing.Size(100, 20);
             this.DrawersLabel.TabIndex = 68;
             this.DrawersLabel.Text = "drawers";
+            this.DrawersLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // DepthLabel
             // 
-            this.DepthLabel.AutoSize = true;
             this.DepthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DepthLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.DepthLabel.Location = new System.Drawing.Point(634, 115);
+            this.DepthLabel.Location = new System.Drawing.Point(645, 117);
             this.DepthLabel.Name = "DepthLabel";
-            this.DepthLabel.Size = new System.Drawing.Size(50, 20);
+            this.DepthLabel.Size = new System.Drawing.Size(100, 20);
             this.DepthLabel.TabIndex = 69;
             this.DepthLabel.Text = "depth";
+            this.DepthLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // DaysLabel
             // 
-            this.DaysLabel.AutoSize = true;
             this.DaysLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DaysLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.DaysLabel.Location = new System.Drawing.Point(634, 173);
+            this.DaysLabel.Location = new System.Drawing.Point(645, 175);
             this.DaysLabel.Name = "DaysLabel";
-            this.DaysLabel.Size = new System.Drawing.Size(42, 20);
+            this.DaysLabel.Size = new System.Drawing.Size(100, 20);
             this.DaysLabel.TabIndex = 70;
             this.DaysLabel.Text = "days";
+            this.DaysLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label15
             // 

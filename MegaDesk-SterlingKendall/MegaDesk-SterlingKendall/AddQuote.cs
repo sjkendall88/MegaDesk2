@@ -99,6 +99,7 @@ namespace MegaDesk2_TeamEternal
 
         private void DeskDepth_Leave(object sender, EventArgs e)
         {
+            DisplayQuote.Enabled = true;
             float oDepth;
             //string.IsNullOrEmpty(DeskDepth.Text);  && char.IsDigit(DeskDepth.Text, 1)
 
@@ -119,6 +120,69 @@ namespace MegaDesk2_TeamEternal
             }
         }
 
-
+        private void DisplayQuote_MouseEnter(object sender, EventArgs e)
+        {
+            if (FirstName.Text == "" || LastName.Text == "" || address.Text == "" || city.Text == "" || state.Text == "" || DeskWidth.Text == "" || DeskDepth.Text == "" || NumOfDrawers.Text == "" || DeskMaterials.Text == "" || RushDelivery.Text == "")
+            {
+                requiredFieldsLabel.BackColor = Color.DarkRed;
+                DisplayQuote.Enabled = false;
+            }
+            else
+            {
+                requiredFieldsLabel.Visible = false;
+                //DisplayQuote.Enabled = true;
+            }
         }
+
+        private void DisplayQuote_MouseLeave(object sender, EventArgs e)
+        {
+            //requiredFieldsLabel.Visible = false;
+            //DisplayQuote.Enabled = true;
+        }
+
+        private void FirstName_Leave(object sender, EventArgs e)
+        {
+            DisplayQuote.Enabled = true;
+        }
+
+        private void LastName_Leave(object sender, EventArgs e)
+        {
+            DisplayQuote.Enabled = true;
+        }
+
+        private void Address_Leave(object sender, EventArgs e)
+        {
+            DisplayQuote.Enabled = true;
+        }
+
+        private void City_Leave(object sender, EventArgs e)
+        {
+            DisplayQuote.Enabled = true;
+        }
+
+        private void State_Leave(object sender, EventArgs e)
+        {
+            DisplayQuote.Enabled = true;
+        }
+
+        private void DeskWidth_Leave(object sender, EventArgs e)
+        {
+            DisplayQuote.Enabled = true;
+        }
+
+        private void NumOfDrawers_Leave(object sender, EventArgs e)
+        {
+            DisplayQuote.Enabled = true;
+        }
+
+        private void DeskMaterials_Leave(object sender, EventArgs e)
+        {
+            DisplayQuote.Enabled = true;
+        }
+
+        private void RushDelivery_Leave(object sender, EventArgs e)
+        {
+            DisplayQuote.Enabled = true;
+        }
+    }
     };
