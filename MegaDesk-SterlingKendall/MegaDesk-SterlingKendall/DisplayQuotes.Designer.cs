@@ -63,6 +63,7 @@
             this.DaysLabel = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.ExpectedDateLabel = new System.Windows.Forms.Label();
+            this.PhoneLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ToAddQuote
@@ -81,7 +82,7 @@
             this.StateLabel.AutoSize = true;
             this.StateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StateLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.StateLabel.Location = new System.Drawing.Point(48, 117);
+            this.StateLabel.Location = new System.Drawing.Point(81, 124);
             this.StateLabel.Name = "StateLabel";
             this.StateLabel.Size = new System.Drawing.Size(45, 20);
             this.StateLabel.TabIndex = 42;
@@ -92,7 +93,7 @@
             this.CityLabel.AutoSize = true;
             this.CityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CityLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.CityLabel.Location = new System.Drawing.Point(14, 117);
+            this.CityLabel.Location = new System.Drawing.Point(14, 124);
             this.CityLabel.Name = "CityLabel";
             this.CityLabel.Size = new System.Drawing.Size(32, 20);
             this.CityLabel.TabIndex = 40;
@@ -103,7 +104,7 @@
             this.AddressLabel.AutoSize = true;
             this.AddressLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddressLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.AddressLabel.Location = new System.Drawing.Point(14, 88);
+            this.AddressLabel.Location = new System.Drawing.Point(14, 93);
             this.AddressLabel.Name = "AddressLabel";
             this.AddressLabel.Size = new System.Drawing.Size(66, 20);
             this.AddressLabel.TabIndex = 38;
@@ -450,12 +451,24 @@
             this.ExpectedDateLabel.TabIndex = 72;
             this.ExpectedDateLabel.Text = "date";
             // 
+            // PhoneLabel
+            // 
+            this.PhoneLabel.AutoSize = true;
+            this.PhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PhoneLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.PhoneLabel.Location = new System.Drawing.Point(14, 155);
+            this.PhoneLabel.Name = "PhoneLabel";
+            this.PhoneLabel.Size = new System.Drawing.Size(54, 20);
+            this.PhoneLabel.TabIndex = 73;
+            this.PhoneLabel.Text = "phone";
+            // 
             // DisplayQuotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(71)))), ((int)(((byte)(105)))));
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.PhoneLabel);
             this.Controls.Add(this.ExpectedDateLabel);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.DaysLabel);
@@ -536,5 +549,6 @@
         public System.Windows.Forms.Label DaysLabel;
         private System.Windows.Forms.Label label15;
         public System.Windows.Forms.Label ExpectedDateLabel;
+        public System.Windows.Forms.Label PhoneLabel;
     }
 }

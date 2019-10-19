@@ -12,6 +12,7 @@ namespace MegaDesk2_TeamEternal
         public string address { get; set; }
         public string city { get; set; }
         public string state { get; set; }
+        public string phone { get; set; }
         public DateTime orderDate = DateTime.Today;
 
 
@@ -19,7 +20,7 @@ namespace MegaDesk2_TeamEternal
         {
             // Variables
             float squareInch, feeRush = 0, matFee = 0, exDays = 0, drawFee, topfee = 0, deskCost, width, depth, drawers, baseDeskPrice=(float)MegaConst.BaseDeskPrice;
-            string fName, lName, addrss, cty, rush, materials, stte;
+            string fName, lName, addrss, cty, rush, materials, stte, phone;
             DateTime orderDate, expDate = default;
             int[,] rushFee = new int[3, 3];
 
@@ -29,6 +30,7 @@ namespace MegaDesk2_TeamEternal
             addrss = testQuote.address;
             cty = testQuote.city;
             stte = testQuote.state;
+            phone = testQuote.phone;
             orderDate = testQuote.orderDate;
             depth = testDesk.Depth;
             width = testDesk.Width;
@@ -108,8 +110,9 @@ namespace MegaDesk2_TeamEternal
             viewDisplayQuotes.FirstNameLabel.Text = fName;
             viewDisplayQuotes.LastNameLabel.Text = lName;
             viewDisplayQuotes.AddressLabel.Text = addrss;
-            viewDisplayQuotes.CityLabel.Text = cty;
+            viewDisplayQuotes.CityLabel.Text = cty + ",";
             viewDisplayQuotes.StateLabel.Text = stte;
+            viewDisplayQuotes.PhoneLabel.Text = phone;
             viewDisplayQuotes.MaterialLabel.Text = materials;
             viewDisplayQuotes.WidthLabel.Text = width.ToString();
             viewDisplayQuotes.DepthLabel.Text = depth.ToString();
@@ -132,6 +135,7 @@ namespace MegaDesk2_TeamEternal
             megaDeskQuotes.mdAddress = addrss;
             megaDeskQuotes.mdCity = cty;
             megaDeskQuotes.mdState = stte;
+            megaDeskQuotes.mdPhone = phone;
             megaDeskQuotes.mdOrderDate = orderDate;
             megaDeskQuotes.mdWidth = width;
             megaDeskQuotes.mdDepth = depth;
@@ -285,6 +289,7 @@ namespace MegaDesk2_TeamEternal
 
     class MegaDeskQuotes //: DeskQuote
     {
+        public string mdPhone { get; set; }
         public string mdFirstName { get; set; }
         public string mdLastName { get; set; }
         public string mdAddress { get; set; }

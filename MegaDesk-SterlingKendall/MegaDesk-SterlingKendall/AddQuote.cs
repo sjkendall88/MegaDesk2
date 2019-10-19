@@ -27,6 +27,7 @@ namespace MegaDesk2_TeamEternal
             testQuote.address = address.Text;
             testQuote.city = city.Text;
             testQuote.state = state.Text;
+            testQuote.phone = phone.Text;
             testQuote.orderDate = DateTime.Today;
 
             Desk testDesk = new Desk();
@@ -122,7 +123,7 @@ namespace MegaDesk2_TeamEternal
 
         private void DisplayQuote_MouseEnter(object sender, EventArgs e)
         {
-            if (FirstName.Text == "" || LastName.Text == "" || address.Text == "" || city.Text == "" || state.Text == "" || DeskWidth.Text == "" || DeskDepth.Text == "" || NumOfDrawers.Text == "" || DeskMaterials.Text == "" || RushDelivery.Text == "")
+            if (FirstName.Text == "" || LastName.Text == "" || address.Text == "" || city.Text == "" || state.Text == "" || DeskWidth.Text == "" || DeskDepth.Text == "" || NumOfDrawers.Text == "" || DeskMaterials.Text == "" || RushDelivery.Text == "" || phone.Text == "")
             {
                 requiredFieldsLabel.BackColor = Color.DarkRed;
                 DisplayQuote.Enabled = false;
