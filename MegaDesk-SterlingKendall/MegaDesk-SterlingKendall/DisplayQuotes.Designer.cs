@@ -581,6 +581,6 @@
         public System.Windows.Forms.Label DepthLabel;
         public System.Windows.Forms.Label DaysLabel;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label ExpectedDateLabel;
+        public System.Windows.Forms.Label ExpectedDateLabel;
     }
 }

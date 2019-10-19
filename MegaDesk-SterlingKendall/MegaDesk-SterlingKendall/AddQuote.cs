@@ -88,7 +88,6 @@ namespace MegaDesk2_TeamEternal
                 //DeskQuote.DeskCost(FirstName.Text, LastName.Text, address.Text, city.Text, state.Text,
                 //    float.Parse(DeskWidth.Text), float.Parse(DeskDepth.Text), float.Parse(NumOfDrawers.Text),
                 //    DeskMaterials.Text, float.Parse(RushDelivery.Text), ref viewDisplayQuotes);
-
             }
             catch (Exception exception)
             {
@@ -127,7 +126,7 @@ namespace MegaDesk2_TeamEternal
             NumOfDrawers.DataSource = Enum.GetValues(typeof(NumOfDrawers));
             DeskMaterials.DataSource = Enum.GetValues(typeof(DeskType));
             RushDelivery.DataSource = Enum.GetValues(typeof(RushDays));
-        }
+            }
 
         private void DeskDepth_KeyPress(object sender, KeyPressEventArgs e)
         {

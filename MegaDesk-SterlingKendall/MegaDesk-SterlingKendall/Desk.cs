@@ -39,12 +39,12 @@
         Pine
     }
 
-    enum RushDays
+    enum RushDays: int
     {
-        Fourteen,
-        Three,
-        Five,
-        Seven
+        Fourteen = 14,
+        Three = 3,
+        Five = 5,
+        Seven = 7
     }
 
     enum MegaConst: int
