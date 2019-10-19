@@ -46,25 +46,28 @@
             this.label2 = new System.Windows.Forms.Label();
             this.searchResult = new System.Windows.Forms.Label();
             this.deskBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.NewQuoteLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.searchGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deskBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // BackButton
             // 
-            this.BackButton.Location = new System.Drawing.Point(880, 423);
+            this.BackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BackButton.Location = new System.Drawing.Point(640, 493);
             this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(75, 23);
+            this.BackButton.Size = new System.Drawing.Size(155, 56);
             this.BackButton.TabIndex = 3;
-            this.BackButton.Text = "Back";
+            this.BackButton.Text = "Main Menu";
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // subButton
             // 
-            this.subButton.Location = new System.Drawing.Point(788, 423);
+            this.subButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subButton.Location = new System.Drawing.Point(817, 493);
             this.subButton.Name = "subButton";
-            this.subButton.Size = new System.Drawing.Size(75, 23);
+            this.subButton.Size = new System.Drawing.Size(155, 56);
             this.subButton.TabIndex = 6;
             this.subButton.Text = "Search";
             this.subButton.UseVisualStyleBackColor = true;
@@ -73,7 +76,7 @@
             // searchComboBox
             // 
             this.searchComboBox.FormattingEnabled = true;
-            this.searchComboBox.Location = new System.Drawing.Point(310, 31);
+            this.searchComboBox.Location = new System.Drawing.Point(310, 85);
             this.searchComboBox.Name = "searchComboBox";
             this.searchComboBox.Size = new System.Drawing.Size(121, 21);
             this.searchComboBox.TabIndex = 7;
@@ -82,7 +85,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(162, 32);
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(162, 86);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(142, 20);
             this.label1.TabIndex = 8;
@@ -90,6 +94,8 @@
             // 
             // searchGridView
             // 
+            this.searchGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(71)))), ((int)(((byte)(105)))));
+            this.searchGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.searchGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.searchGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fName,
@@ -101,7 +107,7 @@
             this.dDrawers,
             this.rOrder,
             this.tCost});
-            this.searchGridView.Location = new System.Drawing.Point(12, 86);
+            this.searchGridView.Location = new System.Drawing.Point(19, 135);
             this.searchGridView.Name = "searchGridView";
             this.searchGridView.Size = new System.Drawing.Size(943, 331);
             this.searchGridView.TabIndex = 9;
@@ -155,7 +161,8 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(570, 32);
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(570, 86);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 20);
             this.label2.TabIndex = 10;
@@ -164,22 +171,32 @@
             // searchResult
             // 
             this.searchResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchResult.Location = new System.Drawing.Point(675, 32);
+            this.searchResult.ForeColor = System.Drawing.SystemColors.Control;
+            this.searchResult.Location = new System.Drawing.Point(675, 86);
             this.searchResult.MaximumSize = new System.Drawing.Size(120, 20);
             this.searchResult.MinimumSize = new System.Drawing.Size(120, 20);
             this.searchResult.Name = "searchResult";
             this.searchResult.Size = new System.Drawing.Size(120, 20);
             this.searchResult.TabIndex = 11;
             // 
-            // deskBindingSource
+            // NewQuoteLabel
             // 
-            this.deskBindingSource.DataSource = typeof(MegaDesk2_TeamEternal.Desk);
+            this.NewQuoteLabel.AutoSize = true;
+            this.NewQuoteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewQuoteLabel.ForeColor = System.Drawing.Color.White;
+            this.NewQuoteLabel.Location = new System.Drawing.Point(330, 9);
+            this.NewQuoteLabel.Name = "NewQuoteLabel";
+            this.NewQuoteLabel.Size = new System.Drawing.Size(359, 31);
+            this.NewQuoteLabel.TabIndex = 73;
+            this.NewQuoteLabel.Text = "Search Quotes by Material";
             // 
             // SearchQuotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(968, 458);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(71)))), ((int)(((byte)(105)))));
+            this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.NewQuoteLabel);
             this.Controls.Add(this.searchResult);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.searchGridView);
@@ -216,5 +233,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tCost;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label searchResult;
+        private System.Windows.Forms.Label NewQuoteLabel;
     }
 }

@@ -187,6 +187,9 @@ namespace MegaDesk2_TeamEternal
             return fee;
         }
     }
+
+
+
     class MegaDeskQuotes //: DeskQuote
     {
         public string mdFirstName { get; set; }
