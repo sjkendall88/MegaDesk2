@@ -20,9 +20,10 @@ namespace MegaDesk2_TeamEternal
         public static void DeskCost(ref Desk testDesk, ref DeskQuote testQuote, ref DisplayQuotes viewDisplayQuotes)
         {
             // Variables
-            float squareInch, feeRush = 0, matFee = 0, drawFee, topfee = 0, deskCost, width, depth, drawers;
-            string descOut, breakCost, fName, lName, addrss, cty, rush, materials, stte;
-            DateTime orderDate;
+            float squareInch, feeRush = 0, matFee = 0, exDays = 0, drawFee, topfee = 0, deskCost, width, depth, drawers, baseDeskPrice=(float)MegaConst.BaseDeskPrice;
+            string fName, lName, addrss, cty, rush, materials, stte;
+            DateTime orderDate, expDate = default;
+            int[,] rushFee = new int[3, 3];
 
             //Assignment
             fName = testQuote.firstName;
@@ -43,12 +44,20 @@ namespace MegaDesk2_TeamEternal
             squareInch = depth * width;
             // Drawer fee math
             drawFee = (float)MegaConst.DrawerPrice * drawers;
-            
+
+            // Load rush costs into array
+            rushFee = GetRushOrder();
+
             // Logic
             // Check for Rush
             if (rush != RushDays.Fourteen.ToString())
             {
-                feeRush = RushFee(squareInch, rush);
+                (feeRush, exDays) = RushFee(squareInch, rush, rushFee);
+            }
+            else
+            {
+                feeRush = 0;
+                exDays = 14;
             }
 
             // Check material fee
@@ -77,26 +86,49 @@ namespace MegaDesk2_TeamEternal
                 topfee = (squareInch - (float)MegaConst.BaseDeskSize);
             }
 
+            // Expected date math
+            switch (rush)
+            {
+                case "Fourteen":
+                    expDate = orderDate.AddDays(14);
+                    break;
+                case "Seven":
+                    expDate = orderDate.AddDays(7);
+                    break;
+                case "Five":
+                    expDate = orderDate.AddDays(5);
+                    break;
+                case "Three":
+                    expDate = orderDate.AddDays(3);
+                    break;
+            }
+
             // Add it all up
-            deskCost = feeRush + matFee + drawFee + topfee + (float)MegaConst.BaseDeskPrice;
+            deskCost = feeRush + matFee + drawFee + topfee + baseDeskPrice;
 
-            // Description for output
-            descOut = "Your desk is " + width + " inches wide, the depth is " + depth + " inches, \nit is built out of " + materials +
-                      ", has " + drawers + " drawers, \nand it will be built in " + rush + " days.";
-            breakCost = "Base desk Price: $" + (float)MegaConst.BaseDeskPrice + ".\nMaterial Fee: $" + matFee + 
-                        ".\nDrawer fee: $" + drawFee + ".\nSize Fee: $" + topfee + ".\nRush Fee: $" + feeRush;
-
+            // Output for DisplayQuotes
+            #region Output Display
             viewDisplayQuotes.FirstNameLabel.Text = fName;
             viewDisplayQuotes.LastNameLabel.Text = lName;
             viewDisplayQuotes.AddressLabel.Text = addrss;
             viewDisplayQuotes.CityLabel.Text = cty;
             viewDisplayQuotes.StateLabel.Text = stte;
-            viewDisplayQuotes.DeskDiscLabel.Text = descOut;
-            viewDisplayQuotes.Desk1.Text = breakCost;
-            viewDisplayQuotes.Desk2.Text = "Total Cost: $" + deskCost;
+            viewDisplayQuotes.MaterialLabel.Text = materials;
+            viewDisplayQuotes.WidthLabel.Text = width.ToString();
+            viewDisplayQuotes.DepthLabel.Text = depth.ToString();
+            viewDisplayQuotes.DrawersLabel.Text = drawers.ToString();
+            viewDisplayQuotes.DaysLabel.Text = exDays.ToString();
+            viewDisplayQuotes.BaseDeskPriceLabel.Text = "$" + baseDeskPrice.ToString();
+            viewDisplayQuotes.MaterialFeeLabel.Text = "$" + matFee.ToString();
+            viewDisplayQuotes.DrawerFeeLabel.Text = "$" + drawFee.ToString();
+            viewDisplayQuotes.OversizeFeeLabel.Text = "$" + topfee.ToString();
+            viewDisplayQuotes.RushFeeLabel.Text = "$" + feeRush.ToString();
+            viewDisplayQuotes.OrderDate.Text = orderDate.ToString("MMMM dd yyyy");
+            viewDisplayQuotes.ExpectedDateLabel.Text = expDate.ToString("MMMM dd yyyy");
+            viewDisplayQuotes.TotalCostLabel.Text = "$" + deskCost;
+            #endregion
 
             MegaDeskQuotes megaDeskQuotes = new MegaDeskQuotes();
-
 
             megaDeskQuotes.mdFirstName = fName;
             megaDeskQuotes.mdLastName = lName;
@@ -127,11 +159,11 @@ namespace MegaDesk2_TeamEternal
             }
         }
 
-        private static float RushFee(float squareInch, string rush)
+        private static (float fee, float exDays) RushFee(float squareInch, string rush, int[,] rushFee)
         {
             // Variables and array of fees
-            float fee;
-            int[,] rushFee = { { 60, 70, 80 }, { 40, 50, 60 }, { 30, 35, 40 } };
+            float fee, exDays;
+            // int[,] rushFee = { { 60, 70, 80 }, { 40, 50, 60 }, { 30, 35, 40 } };
             int[] squareRange = { 1000, 2000 };
 
             // logic for fee
@@ -141,16 +173,19 @@ namespace MegaDesk2_TeamEternal
                 if (rush == RushDays.Three.ToString())
                 {
                     fee = rushFee[0, 0];
+                    exDays = 3;
                 }
                 // Return 5 day fee
                 else if (rush == RushDays.Five.ToString())
                 {
                     fee = rushFee[1, 0];
+                    exDays = 5;
                 }
                 // Return 7 day fee
                 else
                 {
                     fee = rushFee[2, 0];
+                    exDays = 7;
                 }
             }
             else if (squareInch > squareRange[1])
@@ -158,14 +193,17 @@ namespace MegaDesk2_TeamEternal
                 if (rush == RushDays.Three.ToString())
                 {
                     fee = rushFee[0, 2];
+                    exDays = 3;
                 }
                 else if (rush == RushDays.Five.ToString())
                 {
                     fee = rushFee[1, 2];
+                    exDays = 5;
                 }
                 else
                 {
                     fee = rushFee[2, 2];
+                    exDays = 7;
                 }
             }
             else
@@ -173,18 +211,92 @@ namespace MegaDesk2_TeamEternal
                 if (rush == RushDays.Three.ToString())
                 {
                     fee = rushFee[0, 1];
+                    exDays = 3;
                 }
                 else if (rush == RushDays.Five.ToString())
                 {
                     fee = rushFee[1, 1];
+                    exDays = 5;
                 }
                 else
                 {
                     fee = rushFee[2, 1];
+                    exDays = 7;
                 }
             }
             // return fee
-            return fee;
+            return (fee, exDays);
+        }
+
+        // create getRushOrder method to read values from file
+        public static int[,] GetRushOrder()
+        {
+            try
+            {
+                // Array variable to return with values
+                // int[,] rushFee = new int[3,3];
+                string filePath = @"rushOrderPrices.txt";
+                int[,] rushFee = new int[3, 3];
+
+                // Create method to search JSON file with saved Quotes
+                // StreamReader readFile = new StreamReader(filePath);
+
+                // read file
+                string[] readFile = File.ReadAllLines(filePath);
+
+                // for loop to populate multidimensional array
+                int i = 0, x = 0, y = 0;
+
+                // rushFee[x, y] = int.Parse(readFile[i]);
+
+                while (i < readFile.Length)
+                {
+                    // loop through third add in array
+
+
+                    while (x < 3)
+                    {
+                        while (y < 3)
+                        {
+
+                            rushFee[x, y] = int.Parse(readFile[i]);
+
+                            i++;
+                            y++;
+                        }
+                        // rushFee[x, y] = int.Parse(readFile[i]);
+                        // i++;
+                        x++;
+                        y = 0;
+                    }
+                }
+
+                // variable to return array
+                return rushFee;
+
+                // Close reader
+                // readFile.;
+                
+            }
+            catch (Exception e)
+            {
+                // Write file
+                StreamWriter writeFile = new StreamWriter(@"rushOrderPrices.txt");
+
+                // Variable to write file
+                string priceString = "60\r\n70\r\n80\r\n40\r\n50\r\n60\r\n30\r\n35\r\n40";
+
+                // Write file
+                writeFile.WriteLine(priceString);
+
+                // close file
+                writeFile.Close();
+
+                Console.WriteLine(e);
+
+                // Call method again to populate array
+                return GetRushOrder();
+            }
         }
     }
     class MegaDeskQuotes //: DeskQuote
